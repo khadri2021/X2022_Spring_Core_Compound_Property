@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:c="http://www.springframework.org/schema/c"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+		https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="cust" class="com.khadri.spring.core.Customer" c:order-ref="order"/>
+
+    <bean id="order" class="com.khadri.spring.core.Order"/>
+
+    <bean id="cust1" class="com.khadri.spring.core.Customer">
+        <constructor-arg name="order" ref="order"/> <!--complex/compound property-->
+    </bean>
+</beans>
